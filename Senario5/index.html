@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hide and Seek with a Button!</title>
+  <style>
+    #collapsibleContent {
+      display: none; 
+      margin-top: 10px;
+      border: 1px solid gray;
+      padding: 10px;
+    }
+    button {
+      padding: 10px 20px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>Hide and Seek with a Button!</h1>
+  <button id="toggleButton">Show More</button>
+  <div id="collapsibleContent">
+    <p>This is the secret content! 🎉</p>
+  </div>
+
+  <script>
+    
+    const toggleButton = document.getElementById('toggleButton');
+
+    
+    const collapsibleContent = document.getElementById('collapsibleContent');
+
+    
+    toggleButton.addEventListener('click', () => {
+      
+      if (collapsibleContent.style.display === 'none') {
+        collapsibleContent.style.display = 'block'; // Show the section
+        toggleButton.textContent = 'Show Less';    // Change button text
+      } else {
+        collapsibleContent.style.display = 'none'; // Hide the section
+        toggleButton.textContent = 'Show More';    // Change button text back
+      }
+    });
+  </script>
+</body>
+</html>

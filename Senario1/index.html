@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Show Off User Info</title>
+
+</head>
+<body>
+  <h1>Show Off User Info</h1>
+  <button id="loadBtn">Load User Data</button>
+  <div id="userInfo"></div>
+
+  <script>
+    
+    const loadBtn = document.getElementById('loadBtn');
+
+    
+    const userInfo = document.getElementById('userInfo');
+
+    
+    loadBtn.addEventListener('click', () => {
+      
+      userInfo.innerHTML = '<p>Loading data...</p>';
+
+      
+      setTimeout(() => {
+        
+        const nameElement = document.createElement('h2');
+        const bioElement = document.createElement('p');
+
+        
+        nameElement.textContent = 'Alice Smith';
+        bioElement.textContent = 'Loves coding cool stuff!';
+
+        
+        userInfo.innerHTML = ''; 
+        userInfo.appendChild(nameElement);
+        userInfo.appendChild(bioElement);
+      }, 1500);
+    });
+  </script>
+</body>
+</html>

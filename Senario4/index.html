@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Username Checker</title>
+  <style>
+    .usernameFeedback {
+      font-size: 1px;
+    }
+    .valid {
+      color: green;
+    }
+    .invalid {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <h1>Username Checker That Talks Back!</h1>
+  <input type="text" id="usernameInput" placeholder="Enter your username">
+  <p id="usernameFeedback"></p>
+
+  <script>
+   
+    const usernameInput = document.getElementById('usernameInput');
+
+    
+    const usernameFeedback = document.getElementById('usernameFeedback');
+
+  
+    usernameInput.addEventListener('input', () => {
+      const username = usernameInput.value; 
+
+      
+      if (username.length < 5) {
+        usernameFeedback.textContent = 'Username must be at least 5 characters!';
+        usernameFeedback.className = 'invalid'; 
+      } else {
+        usernameFeedback.textContent = 'Username is valid!';
+        usernameFeedback.className = 'valid'; 
+      }
+    });
+  </script>
+</body>
+</html>

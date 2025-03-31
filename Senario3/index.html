@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Color Switcher</title>
+  <style>
+    body.light-theme {
+      background-color: white;
+      color: black;
+    }
+    body.dark-theme {
+      background-color: black;
+      color: white;
+    }
+    button {
+      margin: 10px;
+      padding: 10px 20px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body class="light-theme">
+  <h1>Switch Up Colors Like a Champ!</h1>
+  <button id="lightBtn">Light Theme</button>
+  <button id="darkBtn">Dark Theme</button>
+
+  <script>
+    // Step 1: Grab the buttons
+    const lightBtn = document.getElementById('lightBtn');
+    const darkBtn = document.getElementById('darkBtn');
+
+    // Step 2: Find the <body> element
+    const body = document.body;
+
+    // Step 3 & 4: Add a click listener to the "Light Theme" button
+    lightBtn.addEventListener('click', () => {
+      body.classList.remove('dark-theme'); // Remove dark theme class
+      body.classList.add('light-theme');  // Add light theme class
+    });
+
+    // Step 5 & 6: Add a click listener to the "Dark Theme" button
+    darkBtn.addEventListener('click', () => {
+      body.classList.remove('light-theme'); // Remove light theme class
+      body.classList.add('dark-theme');    // Add dark theme class
+    });
+  </script>
+</body>
+</html>
